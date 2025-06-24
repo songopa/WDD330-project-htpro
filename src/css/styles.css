@@ -1,0 +1,251 @@
+:root {
+
+  --primary-font-color: #333;
+  --secondary-font-color: #fff;
+  --tertiary-font-color: #000;
+  --primary-background: #F1F2EE;
+  --brand-color: #4CAF50;
+  --brand-color-2: #FF9800;
+  --brand-font-color: #006400;
+  --brand-font-color-2: #a86500;
+  --nav-color: #E1E1DD;
+  --link-hover-color: #cf7d01;
+
+  --card-background: #10789610;
+  --card-border: 0.1rem solid #b0c6f0;
+  --card-border-radius: 5px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--primary-background);
+  color: var(--primary-font-color);
+}
+main {
+  padding: 0.5rem;
+  font-family: "Noto Sans", sans-serif;
+  min-height: 60vh;
+}
+
+footer,
+header {
+  padding: .375rem .5rem;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 2px solid var(--brand-color);
+  width: 100%;
+}
+
+footer {
+  display: block;
+  justify-items: center;
+  background-color: var(--brand-font-color);
+  color: var(--secondary-font-color);
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+h1, h2, h3, h4 {
+  margin: 1rem;
+  font-family: "League Spartan", sans-serif;
+}
+
+h1, h2 {
+  color: var(--brand-font-color);
+}
+
+h3, h4 {
+  color: var(--brand-font-color-2);
+}
+
+nav {
+  display: none;
+  grid-gap: 10px;
+  font-size: 1.2rem;
+  grid-column: 1 / span 2;
+  text-align: center;
+  width: 90%;
+}
+
+nav a {
+  color: var(--brand-font-color);
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  border-bottom: 2px solid var(--card-background);
+
+}
+
+nav .active {
+  color: var(--brand-font-color-2);
+  font-weight: 900;
+  text-decoration: underline var(--brand-color-2) 5px;
+  text-underline-offset: 15px;
+}
+
+nav a:hover {
+  font-weight: 900;
+  color: var(--link-hover-color);
+}
+
+nav.show {
+  display: grid;
+}
+
+#menu::before {
+  content: "≡";
+  color: var(--brand-color-2);
+  font-size: 3rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+}
+
+#menu.show::before {
+  content: "X";
+  font-size: 1.5rem;
+}
+
+img {
+  object-fit: contain;
+  border-radius: 6px;
+  width: 100%;
+}
+figure {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0.5rem;
+  width: fit-content;
+}
+p {
+  margin: 2px;
+  padding: 0 1rem;
+  font-size: .9rem;
+}
+section {
+  margin: 2px 1rem;
+}
+header a {
+  text-decoration: none;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+button, .btn {
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover, .btn:hover {
+  background-color: var(--brand-color);
+  color: var(--secondary-font-color);
+}
+button:disabled, .btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
+  outline: 2px solid var(--brand-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.5);
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btn-primary {
+  color: var(--tertiary-font-color);
+  background-color: var(--brand-color);
+  border: 1px solid var(--brand-color);
+}
+.btn-outline-success {
+  color: var(--brand-font-color);
+  border: 1px solid var(--brand-color);
+  background-color: transparent;
+}
+
+.logo-text {
+  display: inline-block;
+  font-family: "Archivo Black", "League Spartan", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--brand-font-color);
+}
+.text-info {
+  color: var(--brand-font-color-2);
+}
+.header-logo {
+  width: 2rem;
+}
+.d-flex {
+  display: flex;
+}
+.mx-lg {
+  margin: 0 1rem;
+}
+.fnt-bold {
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+@media screen and (min-width: 36em) {
+  
+  header {
+    display: flex;
+    justify-content: space-around;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    padding: 0 0.5rem;
+    border-bottom: 0;
+  }
+
+  nav .active {
+    text-underline-offset: 20px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  #menu {
+    display: none;
+  }
+}

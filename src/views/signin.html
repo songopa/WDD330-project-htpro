@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Sign In | Potea lost & found</title>
+        <meta name="description" content="Welcome to Potea (lost & found), we help individuals recover their lost properties that are safely handled in by good samaritans">        <meta name="author" content="Songopa Julius">
+        <meta property="og:title" content="Sign-in page - Potea.info ">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://songopa.github.io/wdd231/project/images/potea-logo.webp">
+        <meta property="og:url" content="https://songopa.github.io/wdd231/project">
+        <link rel="stylesheet" href="/styles/potea.css" >
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Noto+Sans&family=Roboto&display=swap" rel="stylesheet"> -->
+        <link rel="icon" href="favicon.ico">
+        <script src="/js/main.js" type="module"></script>
+    </head>
+    <body>
+        <header id="header"></header>
+        <main id="main-content">
+            <div class="d-flex justify-center align-center mt-xl mb-xl">
+                <div class="card" id="signinCard">
+                    <div class="card-header">
+                        Sign In
+                    </div>
+                    <div class="card-body">
+                        <form id="signinForm">
+                            <label >
+                                Email <sup>*</sup>
+                                <input type="email" name="email" id="email" placeholder="Your email" required>
+                            </label>
+                            <label>
+                                Password <sup>*</sup>
+                                <input type="password" name="password" id="password" placeholder="Password" required>
+                            </label>
+                            <label>
+                                <input type="checkbox" name="remember-me" id="remember-me"> 
+                                Remember me
+                            </label>
+                            <div class="mt-sm">
+                                <small>No account? <a href="#" id="signupLink"> Sign Up </a> instead. </small>
+                            </div>
+                            <button type="submit" class="center" >Sign In</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="card d-none" id="signupCard">
+                    <div class="card-header">
+                        Sign Up
+                    </div>
+                    <div class="card-body">
+                        <form id="signupForm">
+                            <label>
+                                Name
+                                <input type="text" name="name" id="name" placeholder="Full name">
+                            </label>
+                            <label >
+                                Email <sup>*</sup>
+                                <input type="email" name="email" id="email-su" placeholder="Your email" required>
+                            </label>
+                            <label>
+                                Password <sup>*</sup>
+                                <input type="password" name="password-su" id="password-su" placeholder="Password (min 8 characters)" required>
+                            </label>
+                            <label>
+                                Repeat password <sup>*</sup>
+                                <input type="password" name="password-rpt" id="password-rpt" placeholder="Repeat above password" required>
+                            </label>
+                            <div class="mt-sm">
+                                <small>
+                                    By continuing, you are agreeing to our  
+                                    <a href="#" id="termsLink"> Terms and Condition </a>. 
+                                </small>
+                            </div>
+                            <div class="mt-sm">
+                                <small>Already have an account? <a href="#" id="signinLink"> Sign In </a> instead. </small>
+                            </div>
+                            <button type="submit" class="center" >Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer" class="grid-footer">
+            
+        </footer>
+    </body>
+</html>
