@@ -19,12 +19,12 @@ export default class News {
     newsTemplate(article) {
         return `
             <div class="news-item">
-                <img src="${article.urlToImage || 'https://placehold.co/150x150/webp?text=HTPro'}" alt="${article.title}" class="news-img">
+                <img src="${article.image_url || 'https://placehold.co/150x150/webp?text=HTPro'}" alt="${article.title}" class="news-img">
                 <div class="news-content">
                     <h3>${article.title}</h3>
                     <p>${article.description || ''}</p>
                     <a href="${article.url}" target="_blank">Read more</a>
-                    <figcaption>${article.author || ''} - ${article.source.name}</figcaption>
+                    <figcaption>${article.source}</figcaption>
                 </div>
             </div>
         `;
@@ -32,23 +32,21 @@ export default class News {
 
     async getHealthNews() {
         try {
-            const apiKey = '341580d6c198432baa865b672c07b393';
-            const keywords = 'health mental health wellness fitness nutrition exercise diet';
-            const language = 'en';
-            const searchIn = 'title,description'; // or 'content'
-            const sortBy = 'relevancy'; // or 'relevancy', 'popularity', 'publishedAt'
-            const url = `https://newsapi.org/v2/everything?q=${encodeURIComponent(keywords)}&language=${language}&sortBy=${sortBy}&apiKey=${apiKey}`;
+            const apiKey = 'jsscjgv1d6lPoi8N9ENfJPKiCgMN1cgsuaA7vZW0';
+            const categories = 'health,food';
+            const lang = 'en';
+            const url = `https://api.thenewsapi.com/v1/news/all?api_token=${apiKey}&language=${lang}&categories=${categories}&limit=3`;
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
             }
-            const data = await response.json();
-            
+            const news = await response.json();
+            console.log('Fetched News Data:', news);
             //limit the number of articles to 5
-            if (data.articles && data.articles.length > 5) {
-                data.articles = data.articles.slice(0, 5);
+            if (news.data && news.data.length > 5) {
+                news.data = news.data.slice(0, 5);
             }
-            return data.articles || [];
+            return news.data || [];
         } catch (error) {
             console.error('Error fetching health news:', error);
             return [];
