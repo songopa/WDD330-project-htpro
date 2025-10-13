@@ -83,7 +83,7 @@ export async function loadHeaderFooter(callback) {
     }
     
     // Load footer
-    const footerHTML = await loadTemplate('/views/partials/footer.html');
+    const footerHTML = await loadTemplate('../../views/partials/footer.html');
     renderWithTemplate(footerHTML, 'footer', { year: new Date().getFullYear() });
     
     // Execute callback if provided

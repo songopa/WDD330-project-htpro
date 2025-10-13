@@ -47,7 +47,7 @@ function navigationListener() {
 }
 
 function loadHomePage() { 
-    utils.loadTemplate('./views/home.html')
+    utils.loadTemplate('../views/home.html')
         .then(template => {
             utils.renderWithTemplate(template, 'main-content', { title: 'Tracking Health & Wellness' })
                 .then(addBMIEventListeners)
@@ -61,7 +61,7 @@ function loadHomePage() {
 }
 
 function loadNutritionPage() {
-    utils.loadTemplate('./views/nutrition.html')
+    utils.loadTemplate('../views/nutrition.html')
         .then(template => {
             utils.renderWithTemplate(template, 'main-content', { title: 'Nutrition Meal Planner' })
                 .then(new Spoonacular());
@@ -70,7 +70,7 @@ function loadNutritionPage() {
 }
 
 function loadActivityPage() {
-    utils.loadTemplate('./views/activity-log.html')
+    utils.loadTemplate('../views/activity-log.html')
         .then(template => {
             utils.renderWithTemplate(template, 'main-content', { title: 'Activity Log' });
         })
@@ -78,7 +78,7 @@ function loadActivityPage() {
 }
 
 function loadProfilePage() {
-    utils.loadTemplate('./views/profile.html')
+    utils.loadTemplate('../views/profile.html')
         .then(template => {
             utils.renderWithTemplate(template, 'main-content', { title: 'My Profile' });
         })
