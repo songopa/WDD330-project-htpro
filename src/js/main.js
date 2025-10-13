@@ -5,7 +5,7 @@ import Spoonacular from './modules/SpoonacularAPI.mjs';
 init();
 
 function init() {
-    utils.loadHeaderFooter(navigationListener);
+    utils.loadHeaderFooter(navigationListener());
     loadHomePage();
 }
 

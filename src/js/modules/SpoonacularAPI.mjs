@@ -37,8 +37,6 @@ export default class Spoonacular {
             }
             const data = await response.json();
 
-            console.log('Meal Plan Data:', data);
-
             return data || [];
         } catch (error) {
             console.error('Error fetching meal plan:', error);
