@@ -14,13 +14,27 @@
     <title>Health Track Pro</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/normalize.css">
-    <script src="/js/main.js" defer></script>
+    <script src="/js/main.js" type="module" defer></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
   <body>
-    <header id="header"></header>
+    <header id="header">
+      <figure>
+        <img src="/images/htpro-logo.webp" class="header-logo" width="48" alt="htpro-logo">
+        <div class="logo-text">
+          HealthTrack<span class="text-info">Pro</span>
+        </div>
+      </figure>
+      <a id="menu" href="#" aria-label="menu button"></a>
+      <nav id="navigation">
+        <span class="nav-item active" data-page="home">Home</span>
+        <span class="nav-item" data-page="nutrition">Nutrition</span>
+        <span class="nav-item" data-page="activity">Activity Log</span>
+        <span class="nav-item" data-page="profile">Profile</span>
+        </nav>
+    </header>
     <main id="main-content">
-      This is main body
+      
     </main>
     <footer id="footer"></footer>
   </body>

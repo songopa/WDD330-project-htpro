@@ -6,12 +6,12 @@
   --primary-background: #F1F2EE;
   --brand-color: #4CAF50;
   --brand-color-2: #FF9800;
-  --brand-font-color: #006400;
+  --brand-font-color: #1D421E;
   --brand-font-color-2: #a86500;
-  --nav-color: #E1E1DD;
+  --nav-color: #2196F3;
   --link-hover-color: #cf7d01;
 
-  --card-background: #10789610;
+  --card-background: #2196F3;
   --card-border: 0.1rem solid #b0c6f0;
   --card-border-radius: 5px;
 }
@@ -30,7 +30,9 @@ body {
 }
 main {
   padding: 0.5rem;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  line-height: 1.5rem;
   min-height: 60vh;
 }
 
@@ -63,6 +65,7 @@ footer {
 h1, h2, h3, h4 {
   margin: 1rem;
   font-family: "League Spartan", sans-serif;
+  font-weight: 800;
 }
 
 h1, h2 {
@@ -82,13 +85,12 @@ nav {
   width: 90%;
 }
 
-nav a {
+.nav-item {
   color: var(--brand-font-color);
   text-decoration: none;
   display: block;
   padding: 0.5rem;
-  border-bottom: 2px solid var(--card-background);
-
+  border-bottom: 2px solid var(--nav-color);
 }
 
 nav .active {
@@ -98,9 +100,10 @@ nav .active {
   text-underline-offset: 15px;
 }
 
-nav a:hover {
+.nav-item:hover {
   font-weight: 900;
   color: var(--link-hover-color);
+  cursor: pointer;
 }
 
 nav.show {
@@ -134,7 +137,7 @@ figure {
 p {
   margin: 2px;
   padding: 0 1rem;
-  font-size: .9rem;
+  
 }
 section {
   margin: 2px 1rem;
@@ -189,6 +192,17 @@ button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
   background-color: transparent;
 }
 
+.justify-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .logo-text {
   display: inline-block;
   font-family: "Archivo Black", "League Spartan", sans-serif;
@@ -199,6 +213,21 @@ button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
 .text-info {
   color: var(--brand-font-color-2);
 }
+.text-primary {
+  color: var(--primary-font-color);
+}
+.text-secondary {
+  color: var(--secondary-font-color);
+}
+.text-success {
+  color: var(--brand-color);
+}
+.text-warning {
+  color: var(--brand-font-color-2);
+}
+.text-danger {
+  color: #f44336;
+}
 .header-logo {
   width: 2rem;
 }
@@ -208,11 +237,116 @@ button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
 .mx-lg {
   margin: 0 1rem;
 }
+.mt-lg {
+  margin-top: 2rem;
+}
 .fnt-bold {
   font-weight: 700;
   letter-spacing: 2px;
 }
 
+.d-home-grid {
+  display: block;
+}
+
+.card  {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  border-radius: var(--card-border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: var(--primary-font-color);
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--secondary-font-color);
+  border-radius: 8px;
+}
+input, textarea, select {
+  padding: 0.5rem;
+  border: 1px solid var(--brand-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+input:focus, textarea:focus, select:focus {
+  outline: 1px solid var(--brand-color);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.5);
+} 
+label {
+  font-weight: bold;
+  color: var(--brand-font-color);
+}
+.input-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+  margin: .25rem 0;
+}
+
+/* News Styles */
+.news-item, .meal-item {
+  padding: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.news-img, .meal-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--card-border-radius);
+  margin-right: 1rem;
+}
+.news-item h3 {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+.news-content, .meal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+
+figcaption {
+  font-size: 0.8rem;
+  color: var(--primary-font-color);
+  text-align: center;
+  
+}
+figcaption::before {
+  content: "~";
+  font-weight: bold;
+  color: var(--brand-font-color);
+}
+
+/* Nutrition Styles */
+.d-meal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 0.5rem;
+  align-items: center;
+}
+
+
+
+/* Responsive Styles */
 @media screen and (min-width: 36em) {
   
   header {
@@ -232,7 +366,7 @@ button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
     flex-wrap: nowrap;
   }
 
-  nav a {
+  .nav-item {
     padding: 0 0.5rem;
     border-bottom: 0;
   }
@@ -247,5 +381,17 @@ button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
 
   #menu {
     display: none;
+  }
+  .d-home-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+
+  .news-item {
+    flex-direction: row;
+    align-items: flex-start;
   }
 }
