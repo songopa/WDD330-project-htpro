@@ -1,21 +1,55 @@
 <h1>{{title}}</h1>
-<section>
-    Profile Information
-    <div class="profile-info">
-        <div class="profile-item">
-            <label for="username">Username:</label>
-            <span id="username">{{username}}</span>
+<section class="d-home-grid">
+    <div>
+        <h3>Profile Information</h3>
+        <div id="profile-info">
+            <div class="profile-item">
+                <label for="username">Username:</label>
+                <span id="username">{{username}}</span>
+            </div>
+            <div class="profile-item">
+                <label for="email">Email:</label>
+                <span id="email">{{email}}</span>
+            </div>
+            <div class="profile-item">
+                <label for="age">Age:</label>
+                <span id="age">{{age}}</span>
+            </div>
+            <div class="profile-item">
+                <label for="weight">Weight (kg):</label>
+                <span id="weight">{{weight}}</span>
+            </div>
+            <div>
+                <label for="height">Height (cm)</label>
+                <span id="height">{{height}}</span>
+            </div>
         </div>
-        <div class="profile-item">
-            <label for="email">Email:</label>
-            <span id="email">{{email}}</span>
-        </div>
-        <div class="profile-item">
-            <label for="age">Age:</label>
-            <span id="age">{{age}}</span>
-        </div>
-        <div class="profile-item">
-            <label for="weight">Weight:</label>
-            <span id="weight">{{weight}}</span>
-        </div>
-</sectio>
+        <button class="mt-lg" id="clear-profile">Clear Profile Info</button>
+    </div>
+    <div  >
+        <h3> Update Profile Information </h3>
+        <form id="updateProfileForm" action="">
+            <div class="input-row">
+                <label for="username">Username:</label>
+                <input type="text" name="username" placeholder="Enter Username" required>
+            </div>
+            <div class="input-row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" placeholder="Enter Email" required>
+            </div>
+            <div class="input-row">
+                <label for="age">Age:</label>
+                <input type="number" name="age" placeholder="Enter Age" required>
+            </div>
+            <div class="input-row">
+                <label for="weight">Weight(kg):</label>
+                <input type="number" name="weight" placeholder="Enter Weight in kg" required>
+            </div>
+            <div class="input-row">
+                <label for="height">Height(cm):</label>
+                <input type="number" name="height" placeholder="Enter Height in cm" required>
+            </div>
+            <button type="submit" class="center">Update Profile</button>
+        </form>
+    </div>
+</section>

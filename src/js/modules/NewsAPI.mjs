@@ -41,7 +41,7 @@ export default class News {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
             }
             const news = await response.json();
-            console.log('Fetched News Data:', news);
+            
             //limit the number of articles to 5
             if (news.data && news.data.length > 5) {
                 news.data = news.data.slice(0, 5);

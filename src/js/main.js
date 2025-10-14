@@ -1,6 +1,8 @@
 import * as utils from './modules/utils.mjs';
 import News from './modules/NewsAPI.mjs';
 import Spoonacular from './modules/SpoonacularAPI.mjs';
+import ActivityLogger from './modules/ActivityLogger.mjs';
+import Profile from './modules/Profile.mjs';
 
 init();
 
@@ -72,7 +74,10 @@ function loadNutritionPage() {
 function loadActivityPage() {
     utils.loadTemplate('../views/activity-log.html')
         .then(template => {
-            utils.renderWithTemplate(template, 'main-content', { title: 'Activity Log' });
+            utils.renderWithTemplate(template, 'main-content', { title: 'Activity Log' })
+                .then(() => {
+                    new ActivityLogger()
+                });
         })
         .catch(error => console.error('Error loading activity page:', error));
 }
@@ -80,7 +85,10 @@ function loadActivityPage() {
 function loadProfilePage() {
     utils.loadTemplate('../views/profile.html')
         .then(template => {
-            utils.renderWithTemplate(template, 'main-content', { title: 'My Profile' });
+            utils.renderWithTemplate(template, 'main-content', { title: 'My Profile' })
+                .then(() => {
+                    new Profile()
+                        });
         })
         .catch(error => console.error('Error loading profile page:', error));
 }

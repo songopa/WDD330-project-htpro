@@ -1,4 +1,34 @@
 <h1>{{title}}</h1>
-<div>
-    Activity Log
-</div>
+<section class="d-home-grid">
+    <div>
+        <h3>Welcome to Your Activity Log</h3>
+        <p>Here you can view your recent activities and track your progress over time.</p>
+        <p>Stay motivated and keep up the good work!</p> 
+        <form id="activity-form" action="">
+            <div class="input-row">
+                <label for="height">Activity Name:</label>
+                <select id="activity" name="activity" required>
+                    <option value="" disabled selected>Select an activity</option>
+                    <option value="Running">Running</option>
+                    <option value="Cycling">Cycling</option>
+                    <option value="Swimming">Swimming</option>
+                    <option value="Yoga">Yoga</option>
+                    <option value="Weight Training">Weight Training</option>
+                </select>
+            </div>
+            <div class="input-row">
+                <label for="duration">Duration (min):</label>
+                <input type="number" id="duration" name="duration" placeholder="Duration in minutes" required>
+            </div>
+            <button class="button" type="submit">Add Activity</button>
+        </form>   
+    </div>
+    <div class="d-activity-log">
+        <h3>Recent Activities</h3>
+        <ul id="activity-list">
+            
+        </ul>
+        <button class="button" id="clear-activities">Clear Activity Log</button>
+    </div>
+
+</section>
