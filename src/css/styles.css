@@ -267,6 +267,7 @@ button:focus, button:focus-visible, .btn:focus, .btn:focus-visible {
 .flip-card {
   background-color: transparent;
   perspective: 1000px;
+  min-height: 270px;
 }
 
 .flip-card-inner {
