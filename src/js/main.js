@@ -95,15 +95,33 @@ function loadProfilePage() {
 
 // Add event listeners to BMI input fields
 function addBMIEventListeners() {
-    const heightInput = utils.qs('#height');
-    const weightInput = utils.qs('#weight');
+    // const heightInput = utils.qs('#height');
+    // const weightInput = utils.qs('#weight');
     
 
-    if (heightInput && weightInput) {
-        weightInput.addEventListener('input', () => calculateBMI(weightInput.value, heightInput.value));
-        heightInput.addEventListener('input', () => calculateBMI(weightInput.value, heightInput.value));
+    // if (heightInput && weightInput) {
+    //     weightInput.addEventListener('input', () => calculateBMI(weightInput.value, heightInput.value));
+    //     heightInput.addEventListener('input', () => calculateBMI(weightInput.value, heightInput.value));
+    // } else {
+    //     console.warn('BMI input fields or result element not found.');
+    // }
+    const bmiButton = utils.qs('#calculateBmiBtn');
+    if (bmiButton) {
+        bmiButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            const heightInput = utils.qs('#height');
+            const weightInput = utils.qs('#weight');
+            if (heightInput.value != 0 && weightInput.value != 0) {
+                bmiError.textContent = '';
+                calculateBMI(weightInput.value, heightInput.value);
+            } else {
+                const bmiError = utils.qs('#bmiError');
+                bmiError.textContent = 'Please enter valid height and weight.';
+                console.warn('BMI input fields or result element not found.');
+            }
+        });
     } else {
-        console.warn('BMI input fields or result element not found.');
+        console.warn('Calculate BMI button not found.');
     }
 }
 
@@ -143,6 +161,22 @@ function calculateBMI(rawWeight = 0, rawHeight = 0) {
     } else {
         bmiResult.textContent = 'Please enter valid height and weight.';
         idealWeight.textContent = '';
+    }
+    const card = utils.qs('.flip-card-inner');
+    if (card) {
+        card.classList.add('flipped');
+    } else {
+        console.warn('Flip card element not found.');
+    }
+    const backBtn = utils.qs('#backBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
+            if (card) {
+                card.classList.remove('flipped');
+            }
+        });
+    } else {
+        console.warn('Back button not found.');
     }
 }
 
